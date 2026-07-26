@@ -1,0 +1,7 @@
+Place your portfolio images in this folder.
+
+Suggested names:
+- flight-game-cover.jpg
+- simulator-cover.jpg
+- project-03-cover.jpg
+- artwork-01.jpg
