@@ -1194,3 +1194,317 @@ video {
     text-align: center;
   }
 }
+
+/* Recruiter-focused portfolio pathways */
+.pathways-section {
+  padding: 82px 0 96px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(173, 140, 255, 0.05), rgba(13, 13, 18, 0));
+}
+
+.pathways-intro {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.pathways-intro h2 {
+  margin-top: 10px;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+}
+
+.pathways-intro > p:last-child {
+  margin-top: 16px;
+  color: var(--text-muted);
+}
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.pathway-card {
+  position: relative;
+  min-height: 300px;
+  padding: 34px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.pathway-card:hover,
+.pathway-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(173, 140, 255, 0.5);
+  background: var(--surface-light);
+}
+
+.pathway-number {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  color: rgba(255, 255, 255, 0.08);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pathway-card h3 {
+  margin-top: 10px;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+.pathway-card > p:not(.project-type) {
+  max-width: 500px;
+  margin-top: 18px;
+  color: var(--text-muted);
+}
+
+.pathway-card strong {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--primary-bright);
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.proof-strip > div {
+  padding: 20px 22px;
+  border-right: 1px solid var(--border);
+}
+
+.proof-strip > div:last-child {
+  border-right: 0;
+}
+
+.proof-strip strong,
+.proof-strip span {
+  display: block;
+}
+
+.proof-strip strong {
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+}
+
+.proof-strip span {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.project-note {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .pathways-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proof-strip > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .proof-strip > div:nth-child(-n+2) {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 480px) {
+  .pathways-section {
+    padding: 60px 0 68px;
+  }
+
+  .pathway-card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .pathway-number {
+    font-size: 3.6rem;
+  }
+
+  .proof-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-strip > div,
+  .proof-strip > div:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .proof-strip > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Balanced recruiter-facing hero */
+.hero-actions-balanced .button {
+  min-width: 205px;
+}
+
+.hero h1 span {
+  color: var(--primary-bright);
+}
+
+@media (max-width: 640px) {
+  .hero-actions-balanced .button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Balanced hero showcase: gives Unity and Motion equal visual weight. */
+.hero-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 470px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.showcase-panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
+  isolation: isolate;
+}
+
+.showcase-panel + .showcase-panel {
+  border-left: 1px solid var(--border);
+}
+
+.showcase-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.82) brightness(.72);
+  transform: scale(1.03);
+  transition: transform 450ms ease, filter 450ms ease;
+}
+
+.showcase-motion img { object-position: center; }
+.showcase-unity img { object-position: 52% center; }
+
+.showcase-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 10, 15, .08) 20%, rgba(10, 10, 15, .86) 100%);
+}
+
+.showcase-content {
+  position: absolute;
+  z-index: 2;
+  left: 22px;
+  right: 22px;
+  bottom: 24px;
+  display: grid;
+  gap: 6px;
+}
+
+.showcase-kicker {
+  color: var(--primary-bright);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.showcase-content strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  letter-spacing: -.035em;
+}
+
+.showcase-content small {
+  color: rgba(255,255,255,.72);
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
+.showcase-panel:hover img,
+.showcase-panel:focus-visible img {
+  transform: scale(1.09);
+  filter: saturate(1) brightness(.86);
+}
+
+.showcase-panel:focus-visible {
+  outline: 2px solid var(--primary-bright);
+  outline-offset: -3px;
+}
+
+.showcase-center {
+  position: absolute;
+  z-index: 4;
+  top: 24px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  background: rgba(13,13,18,.78);
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  backdrop-filter: blur(12px);
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.76);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.showcase-center i {
+  color: var(--primary-bright);
+  font-style: normal;
+  font-size: .9rem;
+}
+
+@media (max-width: 980px) {
+  .hero-showcase { min-height: 400px; }
+}
+
+@media (max-width: 560px) {
+  .hero-showcase {
+    grid-template-columns: 1fr;
+    min-height: 560px;
+  }
+  .showcase-panel + .showcase-panel {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .showcase-center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
